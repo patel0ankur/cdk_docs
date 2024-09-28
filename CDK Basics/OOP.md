@@ -1,11 +1,11 @@
-1. Classes and Objects:
+**1. Classes and Objects:**
 
    Definition of Class and Object:
    
    A class serves as a template for creating objects, defining their initial state (attributes) and behavior (methods).
    An object is a specific instance created from this class. 
 
-   Example in AWS CDK:
+   **Example in AWS CDK:**
 
    a) Class Example: A **Stack** class in AWS CDK, which defines a unit of deployment like a container for AWS resources.
      
@@ -39,15 +39,15 @@
    }
    ```
 
-2. Introduction to Object-Oriented Programming:
+**2. Introduction to Object-Oriented Programming:**
 
    Definition and Principles: 
    
    Introduce OOP as a programming paradigm based on the concept of "objects" which can contain data and code. 
    
-   The four pillars:
+   **The four pillars:**
 
-    * Encapsulation:
+   **a) Encapsulation:**
 
       In OOP, encapsulation means keeping all the data (attributes) and the functions (methods) that work on the data together in one place, called a class. 
       
@@ -73,7 +73,7 @@
       Think of encapsulation like a robot that paints pictures. You don’t need to know how the robot works; you just tell it what to paint. Encapsulation hides the complex details and only shows what you need to use it.
 
 
-    * Abstraction: 
+   **b) Abstraction:**
 
       Abstraction means hiding the complex details and showing only the necessary features of an object. 
 
@@ -95,7 +95,7 @@
       
       Think of a TV remote. You don’t need to know how the TV works inside. You just press buttons to control it. Abstraction is like the remote; it lets you use something without worrying about the complex details.
     
-    * Inheritance:
+   **c) Inheritance:**
 
       Inheritance allows a new class to inherit properties and methods from an existing class. For Resource Class Hierarchy in CDK, common behaviors and properties are defined in base classes, which are then extended by specific resource classes.
 
@@ -113,7 +113,7 @@
       Inheritance is like family traits. Just like you might inherit your hair color from your parents, a new class (like a baby) can inherit features from an existing class (like a parent). So, if you have a class that's a basic Phone, a Smartphone class can inherit features from the Phone and then add more features, like a camera or internet browsing.
 
 
-    * Polymorphism:
+**d) Polymorphism:**
 
       Polymorphism, in the context of object-oriented programming, allows objects of different classes to be treated as objects of a common superclass. This concept enables a function to use objects of different types interchangeably, as long as they adhere to a specified interface or class hierarchy.
 
@@ -206,7 +206,7 @@
 
 
 
-3. Constructors and the super Method
+**3. Constructors and the super Method**
 
    * Purpose of Constructors: Constructors are special methods invoked at the time of creating an  object. They are used to initialize the object's properties.
    
@@ -235,7 +235,7 @@
    * ChildClass extends ParentClass. Its constructor first prints its own message and then calls super (), which invokes the constructor of ParentClass.
    * When creating a new instance of ChildClass, both messages are printed, demonstrating the order of constructor calls.
 
-4. Interfaces and Their Usage in AWS CDK
+**4. Interfaces and Their Usage in AWS CDK**
 
    * Interface Definition: An interface is a contract that defines a set of methods a class must    implement, without specifying how these methods should be implemented.
 
