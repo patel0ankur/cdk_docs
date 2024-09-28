@@ -196,9 +196,13 @@
 
 **3. Constructors and the super Method**
 
-   * Purpose of Constructors: Constructors are special methods invoked at the time of creating an  object. They are used to initialize the object's properties.
+   * Purpose of Constructors: 
+
+     Constructors are special methods that run when an object is created. They are used to set up the object’s initial properties.
    
-   * Using super in AWS CDK: In CDK, when extending classes, super is used to call the constructor of a base class. This is crucial in inheritance.
+   * Using super in AWS CDK:
+
+     In AWS CDK, when you extend a class, you use super to call the constructor of the base class. This is important for inheritance, ensuring the base class is properly initialized.
 
    ```
    class ParentClass {
@@ -219,15 +223,19 @@
 
    In the above Code: 
    
-   * ParentClass has a constructor that prints a message when it's called.
-   * ChildClass extends ParentClass. Its constructor first prints its own message and then calls super (), which invokes the constructor of ParentClass.
-   * When creating a new instance of ChildClass, both messages are printed, demonstrating the order of constructor calls.
+   * ParentClass has a constructor that prints a message when it is called.
+   * ChildClass extends ParentClass. Its constructor first prints its own message and then calls super(), which invokes the constructor of ParentClass.
+   * When a new instance of ChildClass is created, both messages are printed, showing the order in which the constructors are called.
 
 **4. Interfaces and Their Usage in AWS CDK**
 
-   * Interface Definition: An interface is a contract that defines a set of methods a class must    implement, without specifying how these methods should be implemented.
+   * Interface Definition: 
+   
+     An interface is like a contract that specifies a set of methods a class must implement, without detailing how these methods should be implemented.
 
-   * Interfaces in AWS CDK:  In CDK, interfaces are used to define standard behaviors for constructs. Next, let's demonstrate the use of an interface in TypeScript, especially in the context of AWS CDK. Suppose we have an interface for a service configuration.
+   * Interfaces in AWS CDK: 
+     
+     In AWS CDK, interfaces define standard behaviors for constructs. Let’s look at an example of using an interface in TypeScript, particularly in the context of AWS CDK. Imagine we have an interface for a service configuration.
  
    ```
    interface ServiceConfig {
@@ -256,4 +264,4 @@
    });
    ```
 
-   In this example,  ServiceConfig is an interface that defines the shape of the service configuration. MyServiceStack is a CDK stack class that takes a ServiceConfig object as a parameter. This demonstrates how interfaces can be used to enforce certain structures in your classes.
+   In this example, ServiceConfig is an interface that specifies the structure of the service configuration. MyServiceStack is a CDK stack class that accepts a ServiceConfig object as a parameter. This shows how interfaces can ensure that classes follow a specific structure.
