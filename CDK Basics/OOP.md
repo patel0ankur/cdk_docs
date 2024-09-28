@@ -1,6 +1,7 @@
 1. Classes and Objects:
 
    Definition of Class and Object:
+   
    A class serves as a template for creating objects, defining their initial state (attributes) and behavior (methods).
    An object is a specific instance created from this class. 
 
@@ -38,7 +39,7 @@
    }
    ```
 
-2. Introduction to Object-Oriented Programming
+3. Introduction to Object-Oriented Programming
 
    Definition and Principles: Introduce OOP as a programming paradigm based on the concept of "objects" which can contain data and code. Discuss the four pillars:
 
@@ -200,7 +201,7 @@
 
 
 
-3. Constructors and the super Method
+4. Constructors and the super Method
 
    * Purpose of Constructors: Constructors are special methods invoked at the time of creating an  object. They are used to initialize the object's properties.
    
@@ -229,7 +230,7 @@
    * ChildClass extends ParentClass. Its constructor first prints its own message and then calls super (), which invokes the constructor of ParentClass.
    * When creating a new instance of ChildClass, both messages are printed, demonstrating the order of constructor calls.
 
-4. Interfaces and Their Usage in AWS CDK
+5. Interfaces and Their Usage in AWS CDK
 
    * Interface Definition: An interface is a contract that defines a set of methods a class must    implement, without specifying how these methods should be implemented.
 
