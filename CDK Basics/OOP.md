@@ -94,69 +94,63 @@
     
    **c) Inheritance:**
 
-      Inheritance allows a new class to inherit properties and methods from an existing class. For Resource Class Hierarchy in CDK, common behaviors and properties are defined in base classes, which are then extended by specific resource classes.
+   Inheritance allows a new class to use properties and methods from an existing class.
+   In CDK, common behaviors and properties are defined in base classes. Specific resource classes extend these base classes to inherit shared functionalities.
 
-      Example: 
+   Example: 
       
-      The Resource class in CDK is a base class for many AWS resource constructs, providing shared properties and methods. Specific resources like S3 buckets or Lambda functions extend this base class, inheriting common functionalities.
+   The **Resource** class in CDK is a base class for many AWS resources, providing shared properties and methods. Specific resources like S3 buckets or Lambda functions extend this base class to inherit common functionalities.
 
-      ```
-      import { Resource, Construct } from 'aws-cdk-lib'; 
-      class CustomResource extends Resource { }
-      ```
+    import { Resource, Construct } from 'aws-cdk-lib'; 
+    class CustomResource extends Resource { }
 
-      Analogy: 
-      
-      Inheritance is like family traits. Just like you might inherit your hair color from your parents, a new class (like a baby) can inherit features from an existing class (like a parent). So, if you have a class that's a basic Phone, a Smartphone class can inherit features from the Phone and then add more features, like a camera or internet browsing.
+   Analogy: 
+   
+   Inheritance is like family traits. Just as you might inherit your hair color from your parents, a new class can inherit features from an existing class. For example, a Smartphone class can inherit features from a basic Phone class and add more features like a camera or internet browsing.
 
+   **d) Polymorphism:**
 
-**d) Polymorphism:**
+   Polymorphism in object-oriented programming allows objects from different classes to be treated as if they belong to a common superclass. This means a function can work with different types of objects interchangeably, as long as they follow a specified interface or class hierarchy.
+   
+   Example:  Animal Sounds
 
-      Polymorphism, in the context of object-oriented programming, allows objects of different classes to be treated as objects of a common superclass. This concept enables a function to use objects of different types interchangeably, as long as they adhere to a specified interface or class hierarchy.
+   Imagine you have a program that deals with various animals, each making a different sound. With polymorphism, you can write a function that handles any animal type and calls the makeSound method, regardless of the specific animal.
 
-      Example:  Animal Sounds
-
-      Imagine you have a program that deals with different types of animals. Each animal makes a different sound. With polymorphism, you can write a function that can handle any animal type and invoke the makeSound method, regardless of the specific animal.
-
-      ```
-      class Animal {
+    class Animal {
          makeSound() {
          console.log("Some sound");
         }
       }
 
-      class Dog extends Animal {
+    class Dog extends Animal {
           makeSound() {
               console.log("Bark");
           }
       }
       
-      class Cat extends Animal {
+    class Cat extends Animal {
           makeSound() {
               console.log("Meow");
           }
       }
       
-      function playSound(animal: Animal) {
+    function playSound(animal: Animal) {
           animal.makeSound();
       }
       
-      const dog = new Dog();
-      const cat = new Cat();
+    const dog = new Dog();
+    const cat = new Cat();
       
-      playSound(dog); // Outputs: Bark
-      playSound(cat); // Outputs: Meow
+    playSound(dog); // Outputs: Bark
+    playSound(cat); // Outputs: Meow
 
-      ```
+   **Polymorphism in AWS CDK**
 
-      Polymorphism in AWS CDK
+   In AWS CDK, polymorphism is used to manage different AWS services in a unified way. Let's take an example of deploying different types of databases using a common interface.
 
-      In AWS CDK, polymorphism is used to manage different AWS services in a unified way. Let's take an example of deploying different types of databases using a common interface.
+   AWS CDK Example: Database Deployment
 
-      AWS CDK Example: Database Deployment
-
-      ```
-
+    
       import { Construct } from 'aws-cdk-lib';
       import { Table, AttributeType } from 'aws-cdk-lib/aws-dynamodb';
       import { DatabaseInstance, DatabaseInstanceEngine } from 'aws-cdk-lib/aws-rds';
@@ -191,17 +185,14 @@
       
       deployDatabase(dynamoDb);
       deployDatabase(rdsDb);
-      ```
    
-      In this AWS CDK example:
+   In this AWS CDK example:
   
-      * IDatabase is an interface representing a generic database.
-      * DynamoDbDatabase and RdsDatabase are classes that implement this interface, representing    specific database types.
-      * The deployDatabase function can handle any database object that implements IDatabase, showcasing    polymorphism.
+   * IDatabase is an interface that defines a generic database.
+   * DynamoDbDatabase and RdsDatabase are classes that implement this interface, representing specific types of databases.
+   * The deployDatabase function can work with any database object that implements IDatabase, demonstrating polymorphism.
   
-      Through these examples, you can see how polymorphism allows for flexibility and reusability in    code, enabling the same function to work with objects of different classes as long as they adhere    to a common interface or class structure. This principle is a cornerstone of efficient and    scalable object-oriented design.
-
-
+   These examples illustrate how polymorphism provides flexibility and reusability in code. It allows the same function to handle objects of different classes, as long as they follow a common interface or class structure. This principle is fundamental to efficient and scalable object-oriented design.
 
 **3. Constructors and the super Method**
 
