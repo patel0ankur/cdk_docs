@@ -75,13 +75,14 @@
 
     * Abstraction: 
 
-      Abstraction in OOP means hiding the complex implementation details and showing only the necessary features of an object. 
+      Abstraction means hiding the complex details and showing only the necessary features of an object. 
 
-      Simplified Cloud Interactions: CDK abstracts away the complex details of cloud resource provisioning. Users define high-level specifications, and CDK handles the underlying cloud formation and resource dependencies.
+      Simplified Cloud Interactions:
+      CDK simplifies cloud resource setup by hiding the complex details. You define what you need at a high level, and CDK handles the rest.
 
       Example: 
       
-      When using CDK to create a serverless function, you don't need to manually set up IAM roles, event sources, or logging. CDK abstracts these details, allowing you to focus on the function's core logic. 
+      When you use CDK to create a serverless function, you don’t need to manually set up IAM roles, event sources, or logging. CDK takes care of these details, so you can focus on the function’s main logic. 
 
       ```
       import { Function, Runtime, Code } from 'aws-cdk-lib/aws-lambda'; 
@@ -92,10 +93,8 @@
 
       Analogy: 
       
-      Think of your TV remote. You don't need to know how the TV works on the inside. You just press buttons (like volume up or change channel) to tell the TV what to do. Abstraction is like the remote; it lets you control things without worrying about the complex details.
-
+      Think of a TV remote. You don’t need to know how the TV works inside. You just press buttons to control it. Abstraction is like the remote; it lets you use something without worrying about the complex details.
     
-
     * Inheritance:
 
       Inheritance allows a new class to inherit properties and methods from an existing class. For Resource Class Hierarchy in CDK, common behaviors and properties are defined in base classes, which are then extended by specific resource classes.
