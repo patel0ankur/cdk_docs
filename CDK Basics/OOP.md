@@ -48,52 +48,49 @@
    **The four pillars:**
 
    **a) Encapsulation:**
+   
+   In OOP, encapsulation means keeping all the data (attributes) and the functions (methods) that work on the data together in one place, called a class. 
+   
+   In AWS CDK, this concept is used to manage AWS resources. 
+   
+   Example:
 
-      In OOP, encapsulation means keeping all the data (attributes) and the functions (methods) that work on the data together in one place, called a class. 
+    import { Bucket } from 'aws-cdk-lib/aws-s3'; 
+    const myBucket = new Bucket(this, 'MyBucket', { versioned: true });
+    
+   CDK Constructs:
+
+   A construct is like a blueprint for an AWS resource, such as a S3 bucket. It can also represent a group of related resources.
       
-      In AWS CDK, this concept is used to manage AWS resources. 
+   Source: https://docs.aws.amazon.com/cdk/v2/guide/constructs.html
 
-      Example:
+   In AWS CDK, each AWS resource is a “construct” that bundles its properties (like a S3 bucket’s name) and methods (like creating the bucket) together.
 
-      ```
-      import { Bucket } from 'aws-cdk-lib/aws-s3'; 
-      const myBucket = new Bucket(this, 'MyBucket', { versioned: true });
-      ```
-
-      CDK Constructs:
-
-      A construct is like a blueprint for an AWS resource, such as a S3 bucket. It can also represent a group of related resources.
+   Analogy: 
       
-      Source: https://docs.aws.amazon.com/cdk/v2/guide/constructs.html
-
-      In AWS CDK, each AWS resource is a “construct” that bundles its properties (like a S3 bucket’s name) and methods (like creating the bucket) together.
-
-      Analogy: 
-      
-      Think of encapsulation like a robot that paints pictures. You don’t need to know how the robot works; you just tell it what to paint. Encapsulation hides the complex details and only shows what you need to use it.
-
+   Think of encapsulation like a robot that paints pictures. You don’t need to know how the robot works; you just tell it what to paint. Encapsulation hides the complex details and only shows what you need to use it.
 
    **b) Abstraction:**
 
-      Abstraction means hiding the complex details and showing only the necessary features of an object. 
+   Abstraction means hiding the complex details and showing only the necessary features of a object.
 
-      Simplified Cloud Interactions:
-      CDK simplifies cloud resource setup by hiding the complex details. You define what you need at a high level, and CDK handles the rest.
+   Simplified Cloud Interactions:
 
-      Example: 
-      
-      When you use CDK to create a serverless function, you don’t need to manually set up IAM roles, event sources, or logging. CDK takes care of these details, so you can focus on the function’s main logic. 
+   CDK simplifies cloud resource setup by hiding the complex details. You define what you need a high level, and CDK handles the rest.
 
-      ```
-      import { Function, Runtime, Code } from 'aws-cdk-lib/aws-lambda'; 
-        const myFunction = new Function(this, 'MyFunction', 
+   Example: 
+   
+   When you use CDK to create a serverless function, you don’t need to manually set up IAM roles   event sources, or logging. CDK takes care of these details, so you can focus on the function’   main logic. 
+
+    import { Function, Runtime, Code } from 'aws-cdk-lib/aws-lambda';
+    const myFunction = new Function(this, 'MyFunction',
         { runtime: Runtime.NODEJS_14_X, handler: 'index.handler', 
-        code: Code.fromAsset('lambda') })
-      ```
+        code: Code.fromAsset('lambda') 
+        })
 
-      Analogy: 
+   Analogy: 
       
-      Think of a TV remote. You don’t need to know how the TV works inside. You just press buttons to control it. Abstraction is like the remote; it lets you use something without worrying about the complex details.
+   Think of a TV remote. You don’t need to know how the TV works inside. You just press buttons to control it. Abstraction is like the remote; it lets you use something without worrying about the complex details.
     
    **c) Inheritance:**
 
