@@ -39,13 +39,19 @@
    }
    ```
 
-3. Introduction to Object-Oriented Programming
+2. Introduction to Object-Oriented Programming:
 
-   Definition and Principles: Introduce OOP as a programming paradigm based on the concept of "objects" which can contain data and code. Discuss the four pillars:
+   Definition and Principles: 
+   
+   Introduce OOP as a programming paradigm based on the concept of "objects" which can contain data and code. 
+   
+   The four pillars:
 
     * Encapsulation:
 
-      In OOP, encapsulation involves bundling the data (attributes) and the methods (functions) that operate on the data into a single unit or class. This concept is fundamental in AWS CDK. 
+      In OOP, encapsulation means keeping all the data (attributes) and the functions (methods) that work on the data together in one place, called a class. 
+      
+      In AWS CDK, this concept is used to manage AWS resources. 
 
       Example:
 
@@ -55,16 +61,16 @@
       ```
 
       CDK Constructs:
-      
-      A construct can represent a single AWS resource, such as an Amazon Simple Storage Service (Amazon S3) bucket. A construct can also be a higher-level abstraction consisting of multiple related AWS resources.
 
+      A construct is like a blueprint for an AWS resource, such as a S3 bucket. It can also represent a group of related resources.
+      
       Source: https://docs.aws.amazon.com/cdk/v2/guide/constructs.html
 
-      Each AWS resource in CDK is represented as a "construct", a class that encapsulates both the properties of the resource (like an S3 bucket's name or an EC2 instance type) and the methods to operate on it (like creating or configuring the resource).
+      In AWS CDK, each AWS resource is a “construct” that bundles its properties (like a S3 bucket’s name) and methods (like creating the bucket) together.
 
       Analogy: 
       
-      Imagine you have a robot that can paint pictures. You don't need to know how the robot works inside; you just need to tell it what to paint. Encapsulation is like this robot. It keeps the complicated stuff hidden inside and only shows what is necessary to use it.
+      Think of encapsulation like a robot that paints pictures. You don’t need to know how the robot works; you just tell it what to paint. Encapsulation hides the complex details and only shows what you need to use it.
 
 
     * Abstraction: 
@@ -201,7 +207,7 @@
 
 
 
-4. Constructors and the super Method
+3. Constructors and the super Method
 
    * Purpose of Constructors: Constructors are special methods invoked at the time of creating an  object. They are used to initialize the object's properties.
    
@@ -230,7 +236,7 @@
    * ChildClass extends ParentClass. Its constructor first prints its own message and then calls super (), which invokes the constructor of ParentClass.
    * When creating a new instance of ChildClass, both messages are printed, demonstrating the order of constructor calls.
 
-5. Interfaces and Their Usage in AWS CDK
+4. Interfaces and Their Usage in AWS CDK
 
    * Interface Definition: An interface is a contract that defines a set of methods a class must    implement, without specifying how these methods should be implemented.
 
