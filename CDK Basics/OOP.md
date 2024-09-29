@@ -265,3 +265,54 @@
    ```
 
    In this example, ServiceConfig is an interface that specifies the structure of the service configuration. MyServiceStack is a CDK stack class that accepts a ServiceConfig object as a parameter. This shows how interfaces can ensure that classes follow a specific structure.
+
+**5. Scope in AWS CDK**
+
+In AWS CDK, the scope parameter is used to define the parent construct within which a child construct is created. It helps organize and structure your CDK application by establishing a hierarchy of constructs.
+
+1. App: 
+The root of the CDK application hierarchy.
+
+2. Stacks:
+Logical groupings of resources (like S3 buckets, Lambda functions, etc.) that are deployed together. Stacks are direct children of an App.
+
+3. Constructs: 
+Basic building blocks of AWS CDK applications. Constructs represent AWS resources and are contained within stacks.
+
+Key Points:
+
+Scope: 
+Specifies the parent construct. It determines where the new construct will be placed within the construct tree.
+
+Hierarchy: 
+Helps in organizing constructs in a nested manner, making it easier to manage and understand the relationships between different parts of your infrastructure.
+
+```
+import * as cdk from 'aws-cdk-lib';
+import * as s3 from 'aws-cdk-lib/aws-s3';
+
+class MyBucketStack extends cdk.Stack {
+    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);
+
+        // Define an S3 bucket in this stack
+        new s3.Bucket(this, 'MyUniqueBucket', {
+            // Bucket configuration...
+        });
+    }
+}
+
+const app = new cdk.App();
+new MyBucketStack(app, 'MyBucketStack');
+```
+
+In this example:
+
+a) The *MyBucketStack* class extends cdk.Stack. It is a stack containing an Amazon S3 bucket.
+
+b) The *scope* parameter in the constructor of *MyBucketStack* refers to the context in which the stack is defined. Here, *app* is passed as the scope when creating MyBucketStack, making *app* the parent of this stack.
+
+* The S3 bucket is defined with *this* as its scope, indicating that it belongs to the *MyBucketStack*. 
+
+
+
