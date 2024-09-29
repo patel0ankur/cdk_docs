@@ -1,6 +1,7 @@
 
 ## CDK App LifeCycle: 
 
+![image](app_lifecycle.png)
 
 Source: [https://docs.aws.amazon.com/cdk/v2/guide/apps.html#lifecycle]
 
