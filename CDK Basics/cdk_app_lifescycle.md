@@ -22,3 +22,4 @@ This is like relocating your assembled structure to its final destination. The C
 
 
 
+https://gitlab.aws.dev/aws-proserve-gcc-us/devops/training/cdk-v2-workshop/-/blob/main/module-14/index.md
