@@ -312,7 +312,7 @@ a) The *MyBucketStack* class extends cdk.Stack. It is a stack containing an Amaz
 
 b) The *scope* parameter in the constructor of *MyBucketStack* refers to the context in which the stack is defined. Here, *app* is passed as the scope when creating MyBucketStack, making *app* the parent of this stack.
 
-* The S3 bucket is defined with *this* as its scope, indicating that it belongs to the *MyBucketStack*. 
+c) The S3 bucket is defined with *this* as its scope, indicating that it belongs to the *MyBucketStack*. 
 
 
 
